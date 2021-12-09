@@ -162,7 +162,7 @@ public class ScheduleJava8View implements Serializable {
             }
         };
 //
-        extenderExamples = extenderService.createExtenderExamples();
+        //extenderExamples = extenderService.createExtenderExamples();
     }
 
     public ExtenderService getScheduleExtenderService() {
