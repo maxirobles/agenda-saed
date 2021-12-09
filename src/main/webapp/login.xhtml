@@ -27,15 +27,15 @@
 
                 <p:outputLabel for="password" value="Contraseña:" />
                 <p:inputText id="password" value="#{loginController.password}"  class="input" placeholder="Password" type="password" required="true" />
-                              
+                <p:commandButton class="submit-btn"  action="#{loginController.validar()}" value="Ingresar" style="width: 100%"/>
             </p:panelGrid>            
-            <p:commandButton class="submit-btn"  action="#{loginController.validar()}" value="Ingresar"/>
-                 
+
+
         </h:form>                
-        
+
         <h:outputStylesheet name="css/style.css"/>
-         
-       
+
+
     </h:body>
 </html>
 

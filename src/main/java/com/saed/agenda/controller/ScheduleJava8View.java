@@ -5,6 +5,31 @@
  */
 package com.saed.agenda.controller;
 
+import com.saed.agenda.controller.ExtenderService.ExtenderExample;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
+import javax.faces.event.AjaxBehaviorEvent;
+import javax.faces.model.SelectItem;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+import org.primefaces.event.ScheduleEntryMoveEvent;
+import org.primefaces.event.ScheduleEntryResizeEvent;
+import org.primefaces.event.SelectEvent;
+import org.primefaces.model.DefaultScheduleEvent;
+import org.primefaces.model.DefaultScheduleModel;
+import org.primefaces.model.LazyScheduleModel;
+import org.primefaces.model.ScheduleDisplayMode;
+import org.primefaces.model.ScheduleEvent;
+import org.primefaces.model.ScheduleModel;
+
 @Named
 @ViewScoped
 public class ScheduleJava8View implements Serializable {
@@ -59,7 +84,7 @@ public class ScheduleJava8View implements Serializable {
     @PostConstruct
     public void init() {
         eventModel = new DefaultScheduleModel();
-
+//
         DefaultScheduleEvent<?> event = DefaultScheduleEvent.builder()
                 .title("Champions League Match")
                 .startDate(previousDay8Pm())
@@ -121,7 +146,7 @@ public class ScheduleJava8View implements Serializable {
                 .allDay(true)
                 .build();
         eventModel.addEvent(scheduleEventAllDay);
-
+//
         lazyEventModel = new LazyScheduleModel() {
 
             @Override
@@ -136,7 +161,7 @@ public class ScheduleJava8View implements Serializable {
                 }
             }
         };
-
+//
         extenderExamples = extenderService.createExtenderExamples();
     }
 
@@ -265,7 +290,7 @@ public class ScheduleJava8View implements Serializable {
     public void onEventDelete() {
        // String eventId = FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap().get("eventId");
         if (event != null) {
-            ScheduleEvent<?> event = eventModel.getEvent(eventId);
+            ScheduleEvent<?> event = eventModel.getEvent("");
             eventModel.deleteEvent(event);
         }
     }
