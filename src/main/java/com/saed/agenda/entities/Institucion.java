@@ -37,13 +37,13 @@ public class Institucion implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "codInst", nullable = false)
+    @Column(name = "codInst")
     private Integer codInst;
     @Size(max = 50)
-    @Column(name = "nombreInst", length = 50)
+    @Column(name = "nombreInst")
     private String nombreInst;
     @Size(max = 50)
-    @Column(name = "direccionInst", length = 50)
+    @Column(name = "direccionInst")
     private String direccionInst;
     @Column(name = "telefonoInst")
     private Integer telefonoInst;

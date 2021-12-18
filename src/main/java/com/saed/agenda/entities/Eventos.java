@@ -49,10 +49,10 @@ public class Eventos implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "numEvento", nullable = false)
+    @Column(name = "numEvento")
     private Integer numEvento;
     @Size(max = 50)
-    @Column(name = "descripcion", length = 50)
+    @Column(name = "descripcion")
     private String descripcion;
     @Column(name = "lugar")
     private Integer lugar;
@@ -73,14 +73,14 @@ public class Eventos implements Serializable {
     @Column(name = "Refrigerio")
     private Boolean refrigerio;
     @Size(max = 50)
-    @Column(name = "sacerdote", length = 50)
+    @Column(name = "sacerdote")
     private String sacerdote;
     @Column(name = "nomEntrevistador")
     private Integer nomEntrevistador;
     @Column(name = "nomEntrevistado")
     private Integer nomEntrevistado;
     @Size(max = 50)
-    @Column(name = "observacion", length = 50)
+    @Column(name = "observacion")
     private String observacion;
 
     public Eventos() {

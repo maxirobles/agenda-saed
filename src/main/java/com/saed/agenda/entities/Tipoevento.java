@@ -34,10 +34,10 @@ public class Tipoevento implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "nroEvento", nullable = false)
+    @Column(name = "nroEvento")
     private Integer nroEvento;
     @Size(max = 50)
-    @Column(name = "nombreEvento", length = 50)
+    @Column(name = "nombreEvento")
     private String nombreEvento;
 
     public Tipoevento() {

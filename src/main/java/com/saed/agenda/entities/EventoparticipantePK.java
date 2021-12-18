@@ -20,11 +20,11 @@ public class EventoparticipantePK implements Serializable {
 
     @Basic(optional = false)
     @NotNull
-    @Column(name = "numEvento", nullable = false)
+    @Column(name = "numEvento")
     private int numEvento;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "codPartic", nullable = false)
+    @Column(name = "codPartic")
     private int codPartic;
 
     public EventoparticipantePK() {

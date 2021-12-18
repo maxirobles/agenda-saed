@@ -37,18 +37,18 @@ public class Participantes implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "codPartic", nullable = false)
+    @Column(name = "codPartic")
     private Integer codPartic;
     @Size(max = 50)
-    @Column(name = "nombreParticipante", length = 50)
+    @Column(name = "nombreParticipante")
     private String nombreParticipante;
     @Size(max = 50)
-    @Column(name = "ApellidoParticipante", length = 50)
+    @Column(name = "ApellidoParticipante")
     private String apellidoParticipante;
     @Column(name = "TelefonoParticipante")
     private Integer telefonoParticipante;
     @Size(max = 50)
-    @Column(name = "mailParticipante", length = 50)
+    @Column(name = "mailParticipante")
     private String mailParticipante;
 
     public Participantes() {

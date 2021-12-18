@@ -9,12 +9,29 @@
 
         <ui:composition template="./WEB-INF/plantilla.xhtml">
 
-            <ui:define name="menu">
-                <li><h:commandLink value="Eventos" action="vistas/Pedidos"/></li>
-                <li><h:commandLink value="Nuevo Eventos" action="vistas/nuevo_pedido"/></li>
-                <li><h:commandLink value="Borrar Evento" action="vistas/BorrarPedido"/></li>
-                <li><h:commandLink value="Gestion de Usuarios" action="Source Packages/backbeans/frm_altaUsuario"/></li>
-
+           <ui:define name="menu" >
+                <p:menubar autoDisplay="false">
+                    <p:submenu label="Eventos">
+                        <p:menuitem value="Nuevo evento" url="#"/>
+                        <p:menuitem value="Modificar evento" url="#"/>
+                        <p:menuitem value="Borrar evento" url="#"/>
+                    </p:submenu>
+                    <p:submenu label="Institucion">
+                        <p:menuitem value="Agregar institución" url="#"/>
+                        <p:menuitem value="Modificar institución" url="#"/>
+                        <p:menuitem value="Borrar institución" url="#"/>
+                    </p:submenu>
+                    <p:submenu label="Lugar">
+                        <p:menuitem value="Agregar lugar" url="#"/>
+                        <p:menuitem value="Modificar lugar" url="#"/>
+                        <p:menuitem value="Borrar lugar" url="#"/>
+                    </p:submenu>
+                    <p:submenu label="Usuarios">
+                        <p:menuitem value="Agregar usuario" url="#"/>
+                        <p:menuitem value="Modificar usuario" url="#"/>
+                        <p:menuitem value="Borrar usuario" url="#"/>
+                    </p:submenu>
+                </p:menubar>
             </ui:define>
 
             <ui:define name="content">
@@ -32,24 +49,14 @@
 
                     <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="fade" hideEffect="fade">
                         <h:panelGrid id="eventDetails" columns="2" cellpadding="7">
-                            <p:outputLabel for="title" value="Titles" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{scheduleJava8View.event.title}" required="true"/>
+                            <p:outputLabel for="title" value="descripcion" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.descripcion}" required="true"/>
 
-                            <p:outputLabel for="from" value="From" styleClass="p-text-bold"/>
-                            <p:datePicker id="from" value="#{scheduleJava8View.event.startDate}" pattern="dd/MM/yyyy"
-                                          showTime="true" appendTo="@(body)"/>
-
-                            <p:outputLabel for="to" value="To" styleClass="p-text-bold"/>
-                            <p:datePicker id="to" value="#{scheduleJava8View.event.endDate}" pattern="dd/MM/yyyy"
-                                          showTime="true" appendTo="@(body)"/>
-
-                            <p:outputLabel for="allDay" value="All Day" styleClass="p-text-bold"/>
-                            <h:selectBooleanCheckbox id="allDay" value="#{scheduleJava8View.event.allDay}"/>
-                        </h:panelGrid>
+                             </h:panelGrid>
 
                         <div class="p-d-flex p-jc-between p-mt-3">
                             <p:commandButton type="reset" value="Reset" styleClass="p-text-bold ui-button-outlined"/>
-                            <p:commandButton id="addButton" value="Save" action="#{scheduleJava8View.addEvent}"
+                            <p:commandButton id="addButton" value="Save" action="#{eventoController.create()}"
                                              oncomplete="PF('myschedule').update();PF('eventDialog').hide();"/>
                         </div>
                     </p:dialog>

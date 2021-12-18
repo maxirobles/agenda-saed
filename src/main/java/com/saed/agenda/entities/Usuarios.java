@@ -13,7 +13,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -23,8 +22,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author pc
  */
 @Entity
-@Table(name = "usuarios", uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"documento"})})
+@Table(name = "usuarios")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Usuarios.findAll", query = "SELECT u FROM Usuarios u"),
@@ -42,23 +40,23 @@ public class Usuarios implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "codUsuario", nullable = false)
+    @Column(name = "codUsuario")
     private Integer codUsuario;
     @Column(name = "documento")
     private Integer documento;
     @Size(max = 50)
-    @Column(name = "NombreUsuario", length = 50)
+    @Column(name = "NombreUsuario")
     private String nombreUsuario;
     @Size(max = 50)
-    @Column(name = "apellidoUsuario", length = 50)
+    @Column(name = "apellidoUsuario")
     private String apellidoUsuario;
     @Size(max = 50)
-    @Column(name = "cargo", length = 50)
+    @Column(name = "cargo")
     private String cargo;
     @Column(name = "Telefono")
     private Integer telefono;
     @Size(max = 50)
-    @Column(name = "Direccion", length = 50)
+    @Column(name = "Direccion")
     private String direccion;
     @Column(name = "Categoria")
     private Boolean categoria;

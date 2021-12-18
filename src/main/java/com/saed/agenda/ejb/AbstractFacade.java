@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejb;
+package com.saed.agenda.ejb;
 
 import java.util.List;
 import javax.persistence.EntityManager;
 
 /**
  *
- * @author ministerio
+ * @author pc
  */
 public abstract class AbstractFacade<T> {
 

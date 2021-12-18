@@ -36,10 +36,10 @@ public class Lugar implements Serializable {
     @Id
     @Basic(optional = false)
     @NotNull
-    @Column(name = "codLugar", nullable = false)
+    @Column(name = "codLugar")
     private Integer codLugar;
     @Size(max = 50)
-    @Column(name = "NombreLugar", length = 50)
+    @Column(name = "NombreLugar")
     private String nombreLugar;
     @Column(name = "cantPersonas")
     private Integer cantPersonas;
