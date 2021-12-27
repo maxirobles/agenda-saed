@@ -59,8 +59,8 @@
                             <p:outputLabel for="title" value="Descripcion" styleClass="p-text-bold"/>
                             <p:inputText id="title" value="#{eventoController.evento.descripcion}" required="true"/>
 
-                            <p:outputLabel for="title" value="Lugar" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{eventoController.evento.descripcion}" required="true"/>
+                            <p:outputLabel for="title2" value="Lugar" styleClass="p-text-bold"/>
+                            <p:inputText id="title2" value="#{eventoController.evento.descripcion}" required="true"/>
 
                             <p:outputLabel for="from" value="Desde" styleClass="p-text-bold"/>
                             <p:datePicker id="from" value="#{eventoController.evento.fecharegistro}" pattern="dd/MM/yyyy"
@@ -70,33 +70,33 @@
                             <p:datePicker id="to" value="#{eventoController.evento.fechaevento}" pattern="dd/MM/yyyy"
                                           showTime="true" appendTo="@(body)"/>
 
-                            <p:outputLabel for="title" value="creadorEvento" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{eventoController.evento.creadorEvento}" required="true"/>
+                            <p:outputLabel for="title3" value="creadorEvento" styleClass="p-text-bold"/>
+                            <p:inputText id="title3" value="#{eventoController.evento.creadorEvento}" required="true"/>
 
-                            <p:outputLabel for="title" value="Cant Personas SAED" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{eventoController.evento.cantPersSAED}" required="true"/>
+                            <p:outputLabel for="title4" value="Cant Personas SAED" styleClass="p-text-bold"/>
+                            <p:inputText id="title4" value="#{eventoController.evento.cantPersSAED}" required="true"/>
 
-                            <p:outputLabel for="title" value="Cant Personas EXT" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{eventoController.evento.cantPersExt}" required="true"/>
+                            <p:outputLabel for="title5" value="Cant Personas EXT" styleClass="p-text-bold"/>
+                            <p:inputText id="title5" value="#{eventoController.evento.cantPersExt}" required="true"/>
 
-                            <p:outputLabel for="title" value="Institucion" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{eventoController.evento.institucion}" required="true"/>
+                            <p:outputLabel for="title6" value="Institucion" styleClass="p-text-bold"/>
+                            <p:inputText id="title6" value="#{eventoController.evento.institucion}" required="true"/>
 
                             <h5>Refrigerio</h5>
                             <p:selectBooleanButton onLabel="Yes" offLabel="No" onIcon="pi pi-check" offIcon="pi pi-times"
                                                    style="width:6rem" value="#{eventoController.evento.refrigerio}"/>
 
-                            <p:outputLabel for="title" value="Sacerdote" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{eventoController.evento.sacerdote}" required="true"/>
+                            <p:outputLabel for="title7" value="Sacerdote" styleClass="p-text-bold"/>
+                            <p:inputText id="title7" value="#{eventoController.evento.sacerdote}" required="true"/>
 
-                            <p:outputLabel for="title" value="Nombre Entrevistador" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{eventoController.evento.nomEntrevistador}" required="true"/>
+                            <p:outputLabel for="title8" value="Nombre Entrevistador" styleClass="p-text-bold"/>
+                            <p:inputText id="title8" value="#{eventoController.evento.nomEntrevistador}" required="true"/>
 
-                            <p:outputLabel for="title" value="Nombre Entrevistado" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{eventoController.evento.nomEntrevistado}" required="true"/>
+                            <p:outputLabel for="title9" value="Nombre Entrevistado" styleClass="p-text-bold"/>
+                            <p:inputText id="title9" value="#{eventoController.evento.nomEntrevistado}" required="true"/>
 
-                            <p:outputLabel for="title" value="Observacion" styleClass="p-text-bold"/>
-                            <p:inputText id="title" value="#{eventoController.evento.observacion}" required="true"/>
+                            <p:outputLabel for="title10" value="Observacion" styleClass="p-text-bold"/>
+                            <p:inputText id="title10" value="#{eventoController.evento.observacion}" required="true"/>
 
                         </h:panelGrid>
 
@@ -104,7 +104,7 @@
                             <p:commandButton type="reset" value="Reset" styleClass="p-text-bold ui-button-outlined"/>
                             <p:commandButton id="addButton" value="Save" action="#{eventoController.create()}"
                                              oncomplete="PF('myschedule').update();PF('eventDialog').hide();"/>
-                            <p:commandButton id="addButton" value="RemoveEvent" action="#{eventoController.remove()}"
+                            <p:commandButton id="addButton2" value="RemoveEvent" action="#{eventoController.remove()}"
                                              oncomplete="PF('myschedule').update();PF('eventDialog').hide();"/>
                         </div>
                     </p:dialog>
