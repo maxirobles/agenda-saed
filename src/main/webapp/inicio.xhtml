@@ -9,10 +9,10 @@
 
         <ui:composition template="./WEB-INF/plantilla.xhtml">
 
-           <ui:define name="menu" >
+            <ui:define name="menu" >
                 <p:menubar autoDisplay="false">
                     <p:submenu label="Eventos">
-                        <p:menuitem value="Nuevo evento" url="#"/>
+                        <p:menuitem value="Nuevo evento" url="#" />
                         <p:menuitem value="Modificar evento" url="#"/>
                         <p:menuitem value="Borrar evento" url="#"/>
                     </p:submenu>
@@ -32,9 +32,15 @@
                         <p:menuitem value="Borrar usuario" url="#"/>
                     </p:submenu>
                 </p:menubar>
+                  <div class="p-col-12 p-md-4">
+                    <div class="card">
+                        <h5>Nombre Usuario: </h5>                       
+                        <p:avatar icon="pi pi-user" styleClass="p-mr-2" size="large" style="background-color:#2196F3; color:#fff" shape="circle" />
+                    </div>
+                </div>
             </ui:define>
 
-            <ui:define name="content">
+            <ui:define name="content">              
                 <h:form>
                     <p:growl id="messages" showDetail="true"/>
 
@@ -47,16 +53,58 @@
                         <p:ajax event="eventResize" listener="#{scheduleJava8View.onEventResize}" update="messages"/>
                     </p:schedule>
 
-                    <p:dialog widgetVar="eventDialog" header="Event Details" showEffect="fade" hideEffect="fade">
+                    <p:dialog widgetVar="eventDialog" header="DETALLES DEL EVENTO" showEffect="fade" hideEffect="fade">
                         <h:panelGrid id="eventDetails" columns="2" cellpadding="7">
-                            <p:outputLabel for="title" value="descripcion" styleClass="p-text-bold"/>
+
+                            <p:outputLabel for="title" value="Descripcion" styleClass="p-text-bold"/>
                             <p:inputText id="title" value="#{eventoController.evento.descripcion}" required="true"/>
 
-                             </h:panelGrid>
+                            <p:outputLabel for="title" value="Lugar" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.descripcion}" required="true"/>
+
+                            <p:outputLabel for="from" value="Desde" styleClass="p-text-bold"/>
+                            <p:datePicker id="from" value="#{eventoController.evento.fecharegistro}" pattern="dd/MM/yyyy"
+                                          showTime="true" appendTo="@(body)"/>
+
+                            <p:outputLabel for="to" value="Hasta" styleClass="p-text-bold"/>
+                            <p:datePicker id="to" value="#{eventoController.evento.fechaevento}" pattern="dd/MM/yyyy"
+                                          showTime="true" appendTo="@(body)"/>
+
+                            <p:outputLabel for="title" value="creadorEvento" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.creadorEvento}" required="true"/>
+
+                            <p:outputLabel for="title" value="Cant Personas SAED" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.cantPersSAED}" required="true"/>
+
+                            <p:outputLabel for="title" value="Cant Personas EXT" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.cantPersExt}" required="true"/>
+
+                            <p:outputLabel for="title" value="Institucion" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.institucion}" required="true"/>
+
+                            <h5>Refrigerio</h5>
+                            <p:selectBooleanButton onLabel="Yes" offLabel="No" onIcon="pi pi-check" offIcon="pi pi-times"
+                                                   style="width:6rem" value="#{eventoController.evento.refrigerio}"/>
+
+                            <p:outputLabel for="title" value="Sacerdote" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.sacerdote}" required="true"/>
+
+                            <p:outputLabel for="title" value="Nombre Entrevistador" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.nomEntrevistador}" required="true"/>
+
+                            <p:outputLabel for="title" value="Nombre Entrevistado" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.nomEntrevistado}" required="true"/>
+
+                            <p:outputLabel for="title" value="Observacion" styleClass="p-text-bold"/>
+                            <p:inputText id="title" value="#{eventoController.evento.observacion}" required="true"/>
+
+                        </h:panelGrid>
 
                         <div class="p-d-flex p-jc-between p-mt-3">
                             <p:commandButton type="reset" value="Reset" styleClass="p-text-bold ui-button-outlined"/>
                             <p:commandButton id="addButton" value="Save" action="#{eventoController.create()}"
+                                             oncomplete="PF('myschedule').update();PF('eventDialog').hide();"/>
+                            <p:commandButton id="addButton" value="RemoveEvent" action="#{eventoController.remove()}"
                                              oncomplete="PF('myschedule').update();PF('eventDialog').hide();"/>
                         </div>
                     </p:dialog>

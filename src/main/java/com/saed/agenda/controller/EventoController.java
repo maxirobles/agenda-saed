@@ -36,9 +36,26 @@ public class EventoController implements java.io.Serializable {
         try {
             eventoEJB.create(evento);
             evento = new Eventos();
+            //aqui debo poner un println para que avise que el evento se agrego corretamente
         } catch (Exception e) {
+        //aqui debo poner un println para que avise que el evento no se pudo crear
         }
-
+        
         return null;
     }
+
+    public String remove() {
+
+        try {
+            eventoEJB.create(evento);
+            evento = new Eventos();
+             //aqui debo poner un println para que avise que el evento se elimino corretamente
+        } catch (Exception e) {
+            
+            //aqui debo poner un println para que avise que el evento no se pudo elimnar
+        }
+
+        return null; 
+    }
+    
 }
